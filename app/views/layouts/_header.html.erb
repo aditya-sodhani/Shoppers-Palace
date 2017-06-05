@@ -1,11 +1,16 @@
 <nav class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-        <p id="logo">Venta De<p>
+        <p id="logo"><%= link_to "Venta De", root_url %><p>
         <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Log in", '#' %></li>
+
+        	<ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        	  <% else %>
+              <li><%= link_to "Log in", new_user_session_path %></li>
+            <% end %>
           </ul>
         </nav>
       </div>
-
-    </nav>
+</nav>
