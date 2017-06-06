@@ -5,7 +5,9 @@
 
         	<ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
+              <% if current_user.uid == nil %>
               <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+              <% end %>
               <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         	  <% else %>
               <li><%= link_to "Log in", new_user_session_path %></li>

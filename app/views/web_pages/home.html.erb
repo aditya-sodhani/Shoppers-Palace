@@ -1,5 +1,15 @@
 <div class="center jumbotron">
+<%if user_signed_in? %>
+
+  <h1>Hi <%= current_user.first_name %> <%= current_user.last_name %>!</h1>
+  <h2>Welcome to my test website. I really appreciate your time!</h2>	
+
+
+<% else %>
   <h1>Welcome to the Market Place</h1>
   <h2>We sell for you!</h2>
   <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg btn-primary" %>
+<% end %>
+
 </div>
+

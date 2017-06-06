@@ -10,7 +10,7 @@ end
 gem 'rails', '~> 5.0.3'
 
 gem 'devise'
-
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'sqlite3', '1.3.12'
